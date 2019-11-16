@@ -11,3 +11,8 @@ Drawing on the screen -----------> Matter.js to draw maze onto a canvas element
 Keyboard control ----------------> Matter.js has the ability to map key presses
 
 Detection of the destination ----> Matter.js has the ability to detect collision between two objects.
+
+----------------------------------------------------------------
+Version 0.11
+
+     setup boilerplate
