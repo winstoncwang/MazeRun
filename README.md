@@ -12,6 +12,20 @@ Keyboard control ----------------> Matter.js has the ability to map key presses
 
 Detection of the destination ----> Matter.js has the ability to detect collision between two objects.
 
+
+Matter JS:
+
+World Object - Object containing all the shapes and physics involve. This is essentially the container of our shape.
+
+Engine - This is the brain of the application, this retrieves the input and values of the shape and calculate the changes in position etc.
+
+Runner - links the engine and world together, this determines the rate at which world and engine works with each other.
+
+Render - used to draw out all the changes
+
+Body - shapes and walls.
+
+
 ----------------------------------------------------------------
 Version 0.11
 
