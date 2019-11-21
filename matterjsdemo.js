@@ -16,8 +16,16 @@ const render = Render.create({
 	}
 });
 
+//run the rendering
 Render.run(render);
-Runner.Run(Runner.create(), engine); //alias for Matter.Runner.start
+Runner.run(Runner.create(), engine); //alias for Matter.Runner.start
 
-const shape = Bodies.rectangle(200, 200, 50, 50, {}); //Matter.Bodies.rectangle(x, y, width, height
+//Matter.Bodies.rectangle(x, y, width, height)
 //Bodies object creates the shape while Body object applys the physical properties
+
+const shape = Bodies.rectangle(200, 200, 50, 50, {
+	isStatic : true
+});
+
+//adding shape and world together
+World.add(world, shape);
