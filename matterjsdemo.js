@@ -1,4 +1,4 @@
-const { Engine, Render, Runner, World, Bodies } = Matter; //deconstruct the Matter object
+const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter; //deconstruct the Matter object
 
 //create engine
 
@@ -23,9 +23,17 @@ Runner.run(Runner.create(), engine); //alias for Matter.Runner.start
 //Matter.Bodies.rectangle(x, y, width, height)
 //Bodies object creates the shape while Body object applys the physical properties
 
-const shape = Bodies.rectangle(200, 200, 50, 50, {
-	isStatic : true
-});
+//adding Walls
+const walls = [
+	Bodies.rectangle(400, 0, 800, 40, { isStatic: true }),
+	Bodies.rectangle(400, 600, 800, 40, { isStatic: true }),
+	Bodies.rectangle(0, 300, 40, 600, { isStatic: true }),
+	Bodies.rectangle(800, 300, 40, 600, { isStatic: true })
+];
+
+//create mouseConstraints
+World.add(world, MouseConstraint.create(engine, Mouse.create(render.canvas)));
 
 //adding shape and world together
-World.add(world, shape);
+World.add(world, walls);
+World.add(world, Bodies.rectangle(200, 200, 50, 50));
