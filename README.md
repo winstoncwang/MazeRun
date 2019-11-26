@@ -34,3 +34,7 @@ Version 0.11
 Matter.js demo
 
      working to make a demo
+----------------------------------------------------------------
+Version 0.12
+
+     reuse demo as boilerplate code for maze layout
