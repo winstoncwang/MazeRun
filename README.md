@@ -38,3 +38,7 @@ Matter.js demo
 Version 0.12
 
      reuse demo as boilerplate code for maze layout
+----------------------------------------------------------------
+Version 0.13
+
+     grid array which tracks the cells which we've visited
