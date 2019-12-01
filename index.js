@@ -58,3 +58,6 @@ World.add(world, walls);
 //maze generation
 
 const grid = Array(3).fill(null).map(() => Array(3).fill(false));
+
+const vertical = Array(3).fill(null).map(() => Array.(2).fill(false))
+const horizontal = Array(2).fill(null).map(() => Array.(3).fill(false))
