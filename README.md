@@ -12,7 +12,6 @@ Keyboard control ----------------> Matter.js has the ability to map key presses
 
 Detection of the destination ----> Matter.js has the ability to detect collision between two objects.
 
-
 Matter JS:
 
 World Object - Object containing all the shapes and physics involve. This is essentially the container of our shape.
@@ -25,20 +24,32 @@ Render - used to draw out all the changes
 
 Body - shapes and walls.
 
+---
 
-----------------------------------------------------------------
 Version 0.11
 
      setup boilerplate
-----------------------------------------------------------------
+
+---
+
 Matter.js demo
 
      working to make a demo
-----------------------------------------------------------------
+
+---
+
 Version 0.12
 
      reuse demo as boilerplate code for maze layout
-----------------------------------------------------------------
+
+---
+
 Version 0.13
 
      grid array which tracks the cells which we've visited
+
+---
+
+Version 0.14
+
+     vertical/horizontal array to track the wall between cells
