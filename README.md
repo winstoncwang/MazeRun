@@ -53,3 +53,8 @@ Version 0.13
 Version 0.14
 
      vertical/horizontal array to track the wall between cells
+---
+
+Version 0.141
+
+     extracting cell variable for future variation
