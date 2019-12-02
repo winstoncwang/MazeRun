@@ -58,3 +58,8 @@ Version 0.14
 Version 0.141
 
      extracting cell variable for future variation
+---
+
+Version 0.15
+
+     picking starting cell location
