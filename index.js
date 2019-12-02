@@ -72,3 +72,7 @@ const vertical = Array(cells)
 const horizontal = Array(cells - 1)
 	.fill(null)
 	.map(() => Array(cells).fill(false));
+
+//generate starting point
+const startRow = Math.floor(Math.random() * cells);
+const startCol = Math.floor(Math.random() * cells);
