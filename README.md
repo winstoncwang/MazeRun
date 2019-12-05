@@ -63,3 +63,8 @@ Version 0.141
 Version 0.15
 
      picking starting cell location
+---
+
+Version 0.16
+
+     establish stepping algorithm to form the maze
