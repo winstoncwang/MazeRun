@@ -76,3 +76,15 @@ const horizontal = Array(cells - 1)
 //generate starting point
 const startRow = Math.floor(Math.random() * cells);
 const startCol = Math.floor(Math.random() * cells);
+
+const stepRecursion = (row, col) => {
+	//if visited cell at [row, col], return
+	//if cell is visited, mark grid[row,col] value true
+	//locate the neighbouring cells
+	//see if neighbour picked is out-of-bound
+	//check if we have visited neighbour, if yes, check another neighbour
+	//remove horizontal/vertical wall
+	//visit the next cell
+};
+
+stepRecursion(startRow, startCol);
