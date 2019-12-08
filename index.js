@@ -34,27 +34,15 @@ const walls = [
 	Bodies.rectangle(width / 2, 0, width, wallThickness, {
 		isStatic : true
 	}), //top
-	Bodies.rectangle(
-		width / 2,
-		height,
-		width,
-		wallThickness,
-		{
-			isStatic : true
-		}
-	), //bottom
+	Bodies.rectangle(width / 2, height, width, wallThickness, {
+		isStatic : true
+	}), //bottom
 	Bodies.rectangle(0, height / 2, wallThickness, height, {
 		isStatic : true
 	}), //left
-	Bodies.rectangle(
-		width,
-		height / 2,
-		wallThickness,
-		height,
-		{
-			isStatic : true
-		}
-	) //right
+	Bodies.rectangle(width, height / 2, wallThickness, height, {
+		isStatic : true
+	}) //right
 ];
 
 //adding shape and world together
@@ -62,9 +50,7 @@ World.add(world, walls);
 
 //maze generation
 
-const grid = Array(cells)
-	.fill(null)
-	.map(() => Array(cells).fill(false));
+const grid = Array(cells).fill(null).map(() => Array(cells).fill(false));
 
 const vertical = Array(cells)
 	.fill(null)
@@ -79,8 +65,19 @@ const startCol = Math.floor(Math.random() * cells);
 
 const stepRecursion = (row, col) => {
 	//if visited cell at [row, col], return
+	if (grid[row][col]) {
+		return;
+	}
 	//if cell is visited, mark grid[row,col] value true
-	//locate the neighbouring cells
+	grid[row][col] = true;
+	//locate the neighbouring cells top right bottom left
+	// next add shuffle function
+	const neighour = [
+		[ row - 1, col ],
+		[ row.col + 1 ],
+		[ row + 1, col ],
+		[ row, col - 1 ]
+	];
 	//see if neighbour picked is out-of-bound
 	//check if we have visited neighbour, if yes, check another neighbour
 	//remove horizontal/vertical wall
