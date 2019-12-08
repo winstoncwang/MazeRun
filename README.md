@@ -68,3 +68,8 @@ Version 0.15
 Version 0.16
 
      establish stepping algorithm to form the maze
+---
+
+Version 0.17
+
+     define neighouring cell location
