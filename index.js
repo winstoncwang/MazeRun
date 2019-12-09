@@ -63,6 +63,21 @@ const horizontal = Array(cells - 1)
 const startRow = Math.floor(Math.random() * cells);
 const startCol = Math.floor(Math.random() * cells);
 
+//shuffle function
+const shuffle = (arr) => {
+	let count = arr.length;
+
+	while (count > 0) {
+		count--;
+		const rndIndex = Math.floor(Math.random() * arr.length);
+		const temp = arr[count];
+		arr[count] = arr[rndIndex];
+		arr[rndIndex] = temp;
+	}
+
+	return arr;
+};
+
 const stepRecursion = (row, col) => {
 	//if visited cell at [row, col], return
 	if (grid[row][col]) {
@@ -72,12 +87,12 @@ const stepRecursion = (row, col) => {
 	grid[row][col] = true;
 	//locate the neighbouring cells top right bottom left
 	// next add shuffle function
-	const neighour = [
+	const neighour = shuffle([
 		[ row - 1, col ],
-		[ row.col + 1 ],
+		[ row, col + 1 ],
 		[ row + 1, col ],
 		[ row, col - 1 ]
-	];
+	]);
 	//see if neighbour picked is out-of-bound
 	//check if we have visited neighbour, if yes, check another neighbour
 	//remove horizontal/vertical wall
