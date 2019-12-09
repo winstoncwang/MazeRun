@@ -73,3 +73,8 @@ Version 0.16
 Version 0.17
 
      define neighouring cell location
+---
+
+Version 0.171
+
+     shuffle neighbouring cells order
