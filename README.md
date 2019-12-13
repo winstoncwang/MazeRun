@@ -78,3 +78,8 @@ Version 0.17
 Version 0.171
 
      shuffle neighbouring cells order
+---
+
+Version 0.172
+
+     check if cell is visited and out-of-bound cell has been reached
