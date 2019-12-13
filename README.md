@@ -83,3 +83,8 @@ Version 0.171
 Version 0.172
 
      check if cell is visited and out-of-bound cell has been reached
+---
+
+Bug fix
+
+     fixed a bug for when deconstructing the neighbour array was not working
