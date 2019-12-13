@@ -87,16 +87,37 @@ const stepRecursion = (row, col) => {
 	grid[row][col] = true;
 	//locate the neighbouring cells top right bottom left
 	// next add shuffle function
-	const neighour = shuffle([
+	const neighbours = shuffle([
 		[ row - 1, col ],
 		[ row, col + 1 ],
 		[ row + 1, col ],
 		[ row, col - 1 ]
 	]);
-	//see if neighbour picked is out-of-bound
-	//check if we have visited neighbour, if yes, check another neighbour
-	//remove horizontal/vertical wall
+
+	console.log(neighbours);
+
+	for (let neighbour of neighbours) {
+		const { nextRow, nextCol } = neighbour;
+		//see if neighbour picked is out-of-bound
+		if (
+			nextRow < 0 ||
+			nextRow >= cells ||
+			nextCol < 0 ||
+			nextCol >= cells
+		) {
+			continue;
+		}
+
+		//check if we have visited neighbour, if yes, check another neighbour
+		if (grid[(nextRow, nextCol)]) {
+			continue;
+		}
+
+		//remove horizontal/vertical wall
+	}
+
 	//visit the next cell
 };
 
-stepRecursion(startRow, startCol);
+//stepRecursion(startRow, startCol);
+stepRecursion(0, 0);
