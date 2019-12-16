@@ -116,6 +116,14 @@ const stepRecursion = (row, col) => {
 
 		//remove horizontal/vertical wall
 		//moving horizontal, changing vertical wall
+		if (direction === 'left') {
+			console.log('im in');
+			vertical[row][col - 1] = true;
+		} else if (direction === 'right') {
+			vertical[row][col] = true;
+		}
+
+		console.log(vertical, vertical[row][col - 1]);
 	}
 
 	//visit the next cell
