@@ -88,3 +88,8 @@ Version 0.172
 Bug fix
 
      fixed a bug for when deconstructing the neighbour array was not working
+---
+
+Version 0.173
+
+     change value of vertical array when making horizontal movement to the left/right
