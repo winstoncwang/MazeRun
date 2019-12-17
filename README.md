@@ -98,3 +98,9 @@ Version 0.173
 Version 0.174
 
      change value of horizontal array when making vertical movements to the top/bottom
+---
+
+Version 0.175
+
+     boundary wall thickness update and adding new wall thickness for horizontal and vertical walls
+
