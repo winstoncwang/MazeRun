@@ -93,3 +93,8 @@ Bug fix
 Version 0.173
 
      change value of vertical array when making horizontal movement to the left/right
+---
+
+Version 0.174
+
+     change value of horizontal array when making vertical movements to the top/bottom
