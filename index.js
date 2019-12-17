@@ -88,9 +88,9 @@ const stepRecursion = (row, col) => {
 	//locate the neighbouring cells top right bottom left
 	// next add shuffle function
 	const neighbours = shuffle([
-		//[ row - 1, col, 'up' ],
+		[ row - 1, col, 'up' ],
 		[ row, col + 1, 'right' ],
-		//[ row + 1, col, 'down' ],
+		[ row + 1, col, 'down' ],
 		[ row, col - 1, 'left' ]
 	]);
 
@@ -117,13 +117,14 @@ const stepRecursion = (row, col) => {
 		//remove horizontal/vertical wall
 		//moving horizontal, changing vertical wall
 		if (direction === 'left') {
-			console.log('im in');
 			vertical[row][col - 1] = true;
 		} else if (direction === 'right') {
 			vertical[row][col] = true;
+		} else if (direction === 'up') {
+			horizontal[row - 1][col] = true;
+		} else if (direction === 'down') {
+			horizontal[row][col] = true;
 		}
-
-		console.log(vertical, vertical[row][col - 1]);
 	}
 
 	//visit the next cell
