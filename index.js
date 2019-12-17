@@ -6,9 +6,13 @@ const engine = Engine.create();
 const { world } = engine;
 
 const cells = 3;
-const wallThickness = 20;
+const boundaryWallThickness = 25;
+const wallThickness = 0.5;
 const width = 600;
 const height = 600;
+
+const horizontalWallLength = width / 3;
+const verticalWallLength = height / 3;
 
 //create render property
 
@@ -31,16 +35,16 @@ Runner.run(Runner.create(), engine); //alias for Matter.Runner.start
 
 //adding Walls
 const walls = [
-	Bodies.rectangle(width / 2, 0, width, wallThickness, {
+	Bodies.rectangle(width / 2, 0, width, boundaryWallThickness, {
 		isStatic : true
 	}), //top
-	Bodies.rectangle(width / 2, height, width, wallThickness, {
+	Bodies.rectangle(width / 2, height, width, boundaryWallThickness, {
 		isStatic : true
 	}), //bottom
-	Bodies.rectangle(0, height / 2, wallThickness, height, {
+	Bodies.rectangle(0, height / 2, boundaryWallThickness, height, {
 		isStatic : true
 	}), //left
-	Bodies.rectangle(width, height / 2, wallThickness, height, {
+	Bodies.rectangle(width, height / 2, boundaryWallThickness, height, {
 		isStatic : true
 	}) //right
 ];
@@ -94,7 +98,7 @@ const stepRecursion = (row, col) => {
 		[ row, col - 1, 'left' ]
 	]);
 
-	//console.log(neighbours);
+	console.log('neighbours: ' + neighbours);
 
 	for (let neighbour of neighbours) {
 		const [ nextRow, nextCol, direction ] = neighbour;
@@ -125,10 +129,12 @@ const stepRecursion = (row, col) => {
 		} else if (direction === 'down') {
 			horizontal[row][col] = true;
 		}
-	}
 
-	//visit the next cell
+		//visit the next cell
+		console.log(nextRow, nextCol);
+		stepRecursion(nextRow, nextCol);
+	}
 };
 
-//stepRecursion(startRow, startCol);
-stepRecursion(1, 1);
+stepRecursion(startRow, startCol);
+//stepRecursion(1, 1);
