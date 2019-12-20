@@ -103,4 +103,8 @@ Version 0.174
 Version 0.175
 
      boundary wall thickness update and adding new wall thickness for horizontal and vertical walls
+---
 
+Version 0.18
+
+     drawing horizontal and vertical walls
