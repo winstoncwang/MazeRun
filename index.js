@@ -138,3 +138,41 @@ const stepRecursion = (row, col) => {
 
 stepRecursion(startRow, startCol);
 //stepRecursion(1, 1);
+
+//drawing the walls
+//horizontal
+horizontal.forEach((row, rowIndex) => {
+	row.forEach((wall, columnIndex) => {
+		if (wall) {
+			return;
+		}
+
+		const horizontalWalls = Bodies.rectangle(
+			columnIndex * horizontalWallLength + horizontalWallLength / 2,
+			rowIndex * verticalWallLength + verticalWallLength,
+			horizontalWallLength,
+			wallThickness,
+			{ isStatic: true }
+		);
+
+		World.add(world, horizontalWalls);
+	});
+});
+//vertical
+vertical.forEach((row, rowIndex) => {
+	row.forEach((wall, columnIndex) => {
+		if (wall) {
+			return;
+		}
+
+		const verticalWalls = Bodies.rectangle(
+			columnIndex * horizontalWallLength + horizontalWallLength,
+			rowIndex * verticalWallLength + verticalWallLength / 2,
+			wallThickness,
+			verticalWallLength,
+			{ isStatic: true }
+		);
+
+		World.add(world, verticalWalls);
+	});
+});
