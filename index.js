@@ -6,13 +6,13 @@ const engine = Engine.create();
 const { world } = engine;
 
 const cells = 3;
-const boundaryWallThickness = 25;
-const wallThickness = 0.5;
+const boundaryWallThickness = 10;
+const wallThickness = 1;
 const width = 600;
 const height = 600;
 
-const horizontalWallLength = width / 3;
-const verticalWallLength = height / 3;
+const horizontalWallLength = width / cells;
+const verticalWallLength = height / cells;
 
 //create render property
 
