@@ -6,7 +6,7 @@ const engine = Engine.create();
 const { world } = engine;
 
 const cells = 3;
-const boundaryWallThickness = 10;
+const boundaryWallThickness = 3;
 const wallThickness = 1;
 const width = 600;
 const height = 600;
@@ -135,9 +135,8 @@ const stepRecursion = (row, col) => {
 		stepRecursion(nextRow, nextCol);
 	}
 };
-
+console.log(startRow, startCol);
 stepRecursion(startRow, startCol);
-//stepRecursion(1, 1);
 
 //drawing the walls
 //horizontal
@@ -176,3 +175,16 @@ vertical.forEach((row, rowIndex) => {
 		World.add(world, verticalWalls);
 	});
 });
+
+//creating goal zone
+const goal = Bodies.rectangle(
+	width - horizontalWallLength / 2,
+	height - verticalWallLength / 2,
+	horizontalWallLength * 0.65,
+	verticalWallLength * 0.65,
+	{
+		isStatic : true
+	}
+);
+
+World.add(world, goal);
