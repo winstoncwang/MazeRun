@@ -108,3 +108,13 @@ Version 0.175
 Version 0.18
 
      drawing horizontal and vertical walls
+---
+
+Bug fix
+
+     horizontal and vertical wall length not referred to cell number
+---
+
+Version 0.21
+
+     adding the goal place for user
