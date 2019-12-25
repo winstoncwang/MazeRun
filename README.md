@@ -118,3 +118,8 @@ Bug fix
 Version 0.21
 
      adding the goal place for user
+---
+
+Version 0.22
+
+     creating interactive ball at the starting point
