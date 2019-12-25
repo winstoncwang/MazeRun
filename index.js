@@ -188,3 +188,19 @@ const goal = Bodies.rectangle(
 );
 
 World.add(world, goal);
+
+//creating ball
+let radius;
+if (horizontalWallLength > verticalWallLength) {
+	radius = verticalWallLength / 3;
+} else {
+	radius = horizontalWallLength / 3;
+}
+
+const ball = Bodies.circle(
+	horizontalWallLength / 2,
+	verticalWallLength / 2,
+	radius
+);
+
+World.add(world, ball);
