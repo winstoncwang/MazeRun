@@ -98,7 +98,7 @@ const stepRecursion = (row, col) => {
 		[ row, col - 1, 'left' ]
 	]);
 
-	console.log('neighbours: ' + neighbours);
+	//console.log('neighbours: ' + neighbours);
 
 	for (let neighbour of neighbours) {
 		const [ nextRow, nextCol, direction ] = neighbour;
@@ -131,11 +131,11 @@ const stepRecursion = (row, col) => {
 		}
 
 		//visit the next cell
-		console.log(nextRow, nextCol);
+		//console.log(nextRow, nextCol);
 		stepRecursion(nextRow, nextCol);
 	}
 };
-console.log(startRow, startCol);
+//console.log(startRow, startCol);
 stepRecursion(startRow, startCol);
 
 //drawing the walls
@@ -204,3 +204,24 @@ const ball = Bodies.circle(
 );
 
 World.add(world, ball);
+
+//tracking key press and move ball
+document.addEventListener('keydown', (event) => {
+	console.log(event.keyCode);
+	//move up
+	if (event.keyCode === 38 || event.keyCode === 87) {
+		console.log('up');
+	}
+	//move down
+	if (event.keyCode === 40 || event.keyCode === 83) {
+		console.log('down');
+	}
+	//move left
+	if (event.keyCode === 37 || event.keyCode === 65) {
+		console.log('left');
+	}
+	//move right
+	if (event.keyCode === 39 || event.keyCode === 68) {
+		console.log('right');
+	}
+});
