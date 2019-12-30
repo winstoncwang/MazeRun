@@ -128,3 +128,8 @@ Version 0.22
 Version 0.23
 
      add eventlistener for button press
+---
+
+Version 0.24
+
+     movement update and velocity changes
