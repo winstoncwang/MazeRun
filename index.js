@@ -4,6 +4,7 @@ const { Engine, Render, Runner, World, Bodies, Body } = Matter; //deconstruct th
 
 const engine = Engine.create();
 const { world } = engine;
+world.gravity.y = 0;
 
 const cells = 3;
 const boundaryWallThickness = 3;
@@ -211,18 +212,18 @@ document.addEventListener('keydown', (event) => {
 	const { x, y } = ball.velocity;
 	//move up
 	if (event.keyCode === 38 || event.keyCode === 87) {
-		Body.setVelocity(ball, { x, y: y - 6 });
+		Body.setVelocity(ball, { x, y: y - 2 });
 	}
 	//move down
 	if (event.keyCode === 40 || event.keyCode === 83) {
-		Body.setVelocity(ball, { x, y: y + 6 });
+		Body.setVelocity(ball, { x, y: y + 2 });
 	}
 	//move left
 	if (event.keyCode === 37 || event.keyCode === 65) {
-		Body.setVelocity(ball, { x: x - 6, y });
+		Body.setVelocity(ball, { x: x - 2, y });
 	}
 	//move right
 	if (event.keyCode === 39 || event.keyCode === 68) {
-		Body.setVelocity(ball, { x: x + 6, y });
+		Body.setVelocity(ball, { x: x + 2, y });
 	}
 });
