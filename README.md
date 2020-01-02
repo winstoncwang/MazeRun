@@ -133,3 +133,8 @@ Version 0.23
 Version 0.24
 
      movement update and velocity changes
+---
+
+Version 0.241
+
+     remove gravity
