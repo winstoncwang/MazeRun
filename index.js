@@ -1,4 +1,4 @@
-const { Engine, Render, Runner, World, Bodies, Body } = Matter; //deconstruct the Matter object
+const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter; //deconstruct the Matter object
 
 //create engine
 
@@ -6,7 +6,7 @@ const engine = Engine.create();
 const { world } = engine;
 world.gravity.y = 0;
 
-const cells = 3;
+const cells = 12;
 const boundaryWallThickness = 3;
 const wallThickness = 1;
 const width = 600;
@@ -184,7 +184,8 @@ const goal = Bodies.rectangle(
 	horizontalWallLength * 0.65,
 	verticalWallLength * 0.65,
 	{
-		isStatic : true
+		isStatic : true,
+		label    : 'goal'
 	}
 );
 
@@ -201,7 +202,10 @@ if (horizontalWallLength > verticalWallLength) {
 const ball = Bodies.circle(
 	horizontalWallLength / 2,
 	verticalWallLength / 2,
-	radius
+	radius,
+	{
+		label : 'ball'
+	}
 );
 
 World.add(world, ball);
@@ -226,4 +230,18 @@ document.addEventListener('keydown', (event) => {
 	if (event.keyCode === 39 || event.keyCode === 68) {
 		Body.setVelocity(ball, { x: x + 2, y });
 	}
+});
+
+//win condition
+
+Events.on(engine, 'collisionStart', (events) => {
+	const collisionObjectArr = [ 'ball', 'goal' ];
+	events.pairs.forEach((collision) => {
+		if (
+			collisionObjectArr.includes(collision.bodyA.label) &&
+			collisionObjectArr.includes(collision.bodyB.label)
+		) {
+			console.log('win');
+		}
+	});
 });
