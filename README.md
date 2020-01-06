@@ -143,3 +143,8 @@ Version 0.241
 Version 0.25
 
      add event win condition
+---
+
+Version 0.251
+
+     improved win condition with nonstatic walls
