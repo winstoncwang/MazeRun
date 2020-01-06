@@ -148,3 +148,8 @@ Version 0.25
 Version 0.251
 
      improved win condition with nonstatic walls
+---
+
+Version 0.26
+
+     responsive display of the canvas
