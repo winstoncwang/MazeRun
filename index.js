@@ -9,8 +9,8 @@ world.gravity.y = 0;
 const cells = 12;
 const boundaryWallThickness = 3;
 const wallThickness = 1;
-const width = 600;
-const height = 600;
+const width = window.innerWidth - 6;
+const height = window.innerHeight - 6;
 
 const horizontalWallLength = width / cells;
 const verticalWallLength = height / cells;
