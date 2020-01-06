@@ -152,7 +152,10 @@ horizontal.forEach((row, rowIndex) => {
 			rowIndex * verticalWallLength + verticalWallLength,
 			horizontalWallLength,
 			wallThickness,
-			{ isStatic: true }
+			{
+				isStatic : true,
+				label    : 'wall'
+			}
 		);
 
 		World.add(world, horizontalWalls);
@@ -170,7 +173,10 @@ vertical.forEach((row, rowIndex) => {
 			rowIndex * verticalWallLength + verticalWallLength / 2,
 			wallThickness,
 			verticalWallLength,
-			{ isStatic: true }
+			{
+				isStatic : true,
+				label    : 'wall'
+			}
 		);
 
 		World.add(world, verticalWalls);
@@ -216,19 +222,19 @@ document.addEventListener('keydown', (event) => {
 	const { x, y } = ball.velocity;
 	//move up
 	if (event.keyCode === 38 || event.keyCode === 87) {
-		Body.setVelocity(ball, { x, y: y - 2 });
+		Body.setVelocity(ball, { x, y: y - 4 });
 	}
 	//move down
 	if (event.keyCode === 40 || event.keyCode === 83) {
-		Body.setVelocity(ball, { x, y: y + 2 });
+		Body.setVelocity(ball, { x, y: y + 4 });
 	}
 	//move left
 	if (event.keyCode === 37 || event.keyCode === 65) {
-		Body.setVelocity(ball, { x: x - 2, y });
+		Body.setVelocity(ball, { x: x - 4, y });
 	}
 	//move right
 	if (event.keyCode === 39 || event.keyCode === 68) {
-		Body.setVelocity(ball, { x: x + 2, y });
+		Body.setVelocity(ball, { x: x + 4, y });
 	}
 });
 
@@ -241,7 +247,12 @@ Events.on(engine, 'collisionStart', (events) => {
 			collisionObjectArr.includes(collision.bodyA.label) &&
 			collisionObjectArr.includes(collision.bodyB.label)
 		) {
-			console.log('win');
+			world.gravity.y = 1;
+			world.bodies.forEach((ele) => {
+				if (ele.label === 'wall') {
+					Body.setStatic(ele, false);
+				}
+			});
 		}
 	});
 });
