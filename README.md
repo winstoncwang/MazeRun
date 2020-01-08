@@ -153,3 +153,8 @@ Version 0.251
 Version 0.26
 
      responsive display of the canvas
+---
+
+Version 0.27
+
+     maze with different vertical and horizontal cells
