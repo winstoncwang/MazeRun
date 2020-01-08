@@ -6,14 +6,16 @@ const engine = Engine.create();
 const { world } = engine;
 world.gravity.y = 0;
 
-const cells = 12;
+const cellsHorizontal = 10;
+const cellsVertical = 8;
+
 const boundaryWallThickness = 3;
 const wallThickness = 1;
-const width = window.innerWidth - 6;
-const height = window.innerHeight - 6;
+const width = window.innerWidth - 3.5; //window size
+const height = window.innerHeight - 3.5;
 
-const horizontalWallLength = width / cells;
-const verticalWallLength = height / cells;
+const horizontalWallLength = width / cellsHorizontal;
+const verticalWallLength = height / cellsVertical;
 
 //create render property
 
@@ -55,18 +57,20 @@ World.add(world, walls);
 
 //maze generation
 
-const grid = Array(cells).fill(null).map(() => Array(cells).fill(false));
+const grid = Array(cellsVertical)
+	.fill(null)
+	.map(() => Array(cellsHorizontal).fill(false));
 
-const vertical = Array(cells)
+const vertical = Array(cellsVertical)
 	.fill(null)
-	.map(() => Array(cells - 1).fill(false));
-const horizontal = Array(cells - 1)
+	.map(() => Array(cellsHorizontal - 1).fill(false));
+const horizontal = Array(cellsHorizontal - 1)
 	.fill(null)
-	.map(() => Array(cells).fill(false));
+	.map(() => Array(cellsHorizontal).fill(false));
 
 //generate starting point
-const startRow = Math.floor(Math.random() * cells);
-const startCol = Math.floor(Math.random() * cells);
+const startRow = Math.floor(Math.random() * cellsVertical);
+const startCol = Math.floor(Math.random() * cellsHorizontal);
 
 //shuffle function
 const shuffle = (arr) => {
@@ -107,9 +111,9 @@ const stepRecursion = (row, col) => {
 
 		if (
 			nextRow < 0 ||
-			nextRow >= cells ||
+			nextRow >= cellsVertical ||
 			nextCol < 0 ||
-			nextCol >= cells
+			nextCol >= cellsHorizontal
 		) {
 			continue;
 		}
