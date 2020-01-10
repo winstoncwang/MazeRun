@@ -10,7 +10,7 @@ const cellsHorizontal = 10;
 const cellsVertical = 8;
 
 const boundaryWallThickness = 3;
-const wallThickness = 1;
+const wallThickness = 3;
 const width = window.innerWidth - 3.5; //window size
 const height = window.innerHeight - 3.5;
 
@@ -23,7 +23,7 @@ const render = Render.create({
 	element : document.body,
 	engine  : engine,
 	options : {
-		wireframes : true,
+		wireframes : false,
 		width,
 		height
 	}
@@ -158,7 +158,10 @@ horizontal.forEach((row, rowIndex) => {
 			wallThickness,
 			{
 				isStatic : true,
-				label    : 'wall'
+				label    : 'wall',
+				render   : {
+					fillStyle : 'lightblue'
+				}
 			}
 		);
 
@@ -179,7 +182,10 @@ vertical.forEach((row, rowIndex) => {
 			verticalWallLength,
 			{
 				isStatic : true,
-				label    : 'wall'
+				label    : 'wall',
+				render   : {
+					fillStyle : 'lightblue'
+				}
 			}
 		);
 
@@ -195,7 +201,10 @@ const goal = Bodies.rectangle(
 	verticalWallLength * 0.65,
 	{
 		isStatic : true,
-		label    : 'goal'
+		label    : 'goal',
+		render   : {
+			fillStyle : 'green'
+		}
 	}
 );
 
@@ -214,7 +223,10 @@ const ball = Bodies.circle(
 	verticalWallLength / 2,
 	radius,
 	{
-		label : 'ball'
+		label  : 'ball',
+		render : {
+			fillStyle : 'gold'
+		}
 	}
 );
 
