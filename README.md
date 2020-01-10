@@ -158,3 +158,8 @@ Version 0.26
 Version 0.27
 
      maze with different vertical and horizontal cells
+---
+
+Version 0.271
+
+     maze colouring
