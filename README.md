@@ -163,3 +163,8 @@ Version 0.27
 Version 0.271
 
      maze colouring
+---
+
+Version 0.28
+
+     html win notice added
