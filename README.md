@@ -168,3 +168,8 @@ Version 0.271
 Version 0.28
 
      html win notice added
+---
+
+Version 0.29
+
+     display win message when collision happens
