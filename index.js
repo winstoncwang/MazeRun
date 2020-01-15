@@ -263,6 +263,7 @@ Events.on(engine, 'collisionStart', (events) => {
 			collisionObjectArr.includes(collision.bodyA.label) &&
 			collisionObjectArr.includes(collision.bodyB.label)
 		) {
+			document.querySelector('.win').classList.remove('hidden');
 			world.gravity.y = 1;
 			world.bodies.forEach((ele) => {
 				if (ele.label === 'wall') {
