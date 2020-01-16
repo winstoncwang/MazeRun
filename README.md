@@ -178,3 +178,8 @@ Version 0.29
 Bug fix
 
      add function to restrict velocity
+---
+
+Version 0.31
+
+     external css file and link to cdnjs fontawesome
