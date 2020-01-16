@@ -1,0 +1,30 @@
+body {
+	margin: 0px;
+}
+.win {
+	z-index: 1;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+h1 {
+	font-size: 50px;
+	color: yellow;
+	display: block;
+}
+.hidden {
+	display: none;
+}
+button {
+	font-size: 50px;
+	background-color: transparent;
+	border: none;
+}
+.fa-redo {
+	color: white;
+	background-color: transparent;
+}
