@@ -2,33 +2,13 @@
 <html>
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
-        <style>
-            body{
-                margin:0px
-            }
-            .win{
-                z-index: 1;
-                position:absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height:100vh;
-                width:100vw;
-            }
-            h1{
-                
-                font-size: 50px;
-                color: yellow;
-                
-            }
-            .hidden{
-                display:none;
-            }
-        </style>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="win hidden">
             <h1>Congratulations, You Win !!!!</h1>
+            <button class="restart" title="Click me to play again"><i class="fas fa-redo"></i></button>
         </div>
 
         <script src="index.js"></script>

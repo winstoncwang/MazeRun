@@ -6,8 +6,8 @@ const engine = Engine.create();
 const { world } = engine;
 world.gravity.y = 0;
 
-const cellsHorizontal = 10;
-const cellsVertical = 8;
+const cellsHorizontal = 3;
+const cellsVertical = 3;
 
 const boundaryWallThickness = 3;
 const wallThickness = 3;
