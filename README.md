@@ -173,3 +173,8 @@ Version 0.28
 Version 0.29
 
      display win message when collision happens
+---
+
+Bug fix
+
+     add function to restrict velocity
