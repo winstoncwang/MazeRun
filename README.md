@@ -183,3 +183,8 @@ Bug fix
 Version 0.31
 
      external css file and link to cdnjs fontawesome
+---
+
+Version 0.32
+
+     have replay button added with info on hover
