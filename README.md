@@ -188,3 +188,8 @@ Version 0.31
 Version 0.32
 
      have replay button added with info on hover
+---
+
+Version 0.33
+
+     update to resetting the instance of the project when restart is selected
