@@ -193,3 +193,8 @@ Version 0.32
 Version 0.33
 
      update to resetting the instance of the project when restart is selected
+---
+
+Version 0.34
+
+     changed overall structure to object-orientated
