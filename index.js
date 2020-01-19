@@ -1,10 +1,12 @@
+const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter; //deconstruct the Matter object
+//create engine
+const engine = Engine.create();
+const { world } = engine;
+
+//create runner
+const runner = Runner.create();
+
 const mazeRunner = () => {
-	const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter; //deconstruct the Matter object
-
-	//create engine
-
-	const engine = Engine.create();
-	const { world } = engine;
 	world.gravity.y = 0;
 
 	const cellsHorizontal = 3;
@@ -18,14 +20,7 @@ const mazeRunner = () => {
 	const horizontalWallLength = width / cellsHorizontal;
 	const verticalWallLength = height / cellsVertical;
 
-	//remove previous canvas
-	//const previousCanvas = document.querySelector('canvas');
-	//if (previousCanvas) {
-	//	previousCanvas.remove();
-	//}
-
 	//create render property
-
 	const render = Render.create({
 		element : document.querySelector('body'),
 		engine  : engine,
@@ -35,12 +30,10 @@ const mazeRunner = () => {
 			height
 		}
 	});
-	//console.log(render);
 
 	//run the rendering
 	Render.run(render);
-
-	const runner = Runner.create();
+	//run the runner
 	Runner.run(runner, engine); //alias for Matter.Runner.start
 
 	//Matter.Bodies.rectangle(x, y, width, height)
@@ -302,21 +295,21 @@ const mazeRunner = () => {
 			}
 		});
 	});
-
-	document.querySelector('.restart').addEventListener('click', () => {
-		Events.off(engine, 'collisionStart');
-		World.clear(world);
-		Engine.clear(engine);
-		Render.stop(render);
-		Runner.stop(runner);
-		document.querySelector('.win').classList.add('hidden');
-		document.querySelector('canvas').remove();
-		render.canvas = null; //garbage collect
-		render.context = null;
-		render.textures = {};
-
-		mazeRunner();
-	});
 };
 
 mazeRunner();
+
+document.querySelector('.restart').addEventListener('click', () => {
+	Events.off(engine, 'collisionStart');
+	World.clear(world);
+	Engine.clear(engine);
+	Render.stop(render);
+	Runner.stop(runner);
+	document.querySelector('.win').classList.add('hidden');
+	document.querySelector('canvas').remove();
+	render.canvas = null; //garbage collect
+	render.context = null;
+	render.textures = {};
+
+	//mazeRunner();
+});
