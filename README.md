@@ -198,3 +198,8 @@ Version 0.33
 Version 0.34
 
      changed overall structure to object-orientated
+---
+
+Version 0.35
+
+     separate js file
