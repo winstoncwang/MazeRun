@@ -338,4 +338,19 @@ class mazeRunner {
 			});
 		});
 	};
+
+	resetMaze = () => {
+		this.Events.off(this.engine, 'collisionStart');
+		this.World.clear(this.world);
+		this.Engine.clear(this.engine);
+		this.Render.stop(this.render);
+		this.Runner.stop(this.runner);
+		this.win.classList.add('hidden');
+		document.querySelector('canvas').remove();
+		this.render.canvas = null; //garbage collect
+		this.render.context = null;
+		this.render.textures = {};
+
+		this.generateMaze();
+	};
 }
