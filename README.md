@@ -203,3 +203,8 @@ Version 0.34
 Version 0.35
 
      separate js file
+---
+
+Version 0.36
+
+     implement resetMaze()
