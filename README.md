@@ -208,3 +208,8 @@ Version 0.35
 Version 0.36
 
      implement resetMaze()
+---
+
+Version 0.37
+
+     html update difficulty buttons
