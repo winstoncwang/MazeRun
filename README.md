@@ -218,3 +218,8 @@ Version 0.37
 Version 0.38
 
      add eventlistener to every button
+---
+
+Version 0.39
+
+     button appearance update
