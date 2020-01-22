@@ -2,7 +2,9 @@ class mazeRunner {
 	constructor (
 		body,
 		win,
+		options,
 		resetbutton,
+		startButton,
 		beginnerButton,
 		basicButton,
 		intermediateButton,
@@ -24,22 +26,52 @@ class mazeRunner {
 		this.runner = this.Runner.create();
 		this.body = body;
 		this.win = win;
-
+		this.options = options;
 		//listener
 		resetbutton.addEventListener('click', this.resetMaze);
-		startButton.addEventListener('click', this.resetMaze);
-		beginnerButton.addEventListener('click', this.resetMaze);
-		basicButton.addEventListener('click', this.resetMaze);
-		intermediateButton.addEventListener('click', this.resetMaze);
-		advancedButton.addEventListener('click', this.resetMaze);
-		expertButton.addEventListener('click', this.resetMaze);
+		startButton.addEventListener('click', this.displayOption);
+		beginnerButton.addEventListener('click', this.beginnerMode);
+		basicButton.addEventListener('click', this.basicMode);
+		intermediateButton.addEventListener('click', this.intermediateMode);
+		advancedButton.addEventListener('click', this.advancedMode);
+		expertButton.addEventListener('click', this.expertMode);
 	}
+	//select mode
+	beginnerMode = () => {
+		this.cellsHorizontal = 5;
+		this.cellsVertical = 4;
+		console.log('beginner mode selected');
+	};
+	basicMode = () => {
+		this.cellsHorizontal = 7;
+		this.cellsVertical = 6;
+		console.log('basic mode selected');
+	};
+	intermediateMode = () => {
+		this.cellsHorizontal = 9;
+		this.cellsVertical = 8;
+		console.log('intermediate mode selected');
+	};
+	advancedMode = () => {
+		this.cellsHorizontal = 12;
+		this.cellsVertical = 10;
+		console.log('advanced mode selected');
+	};
+	expertMode = () => {
+		this.cellsHorizontal = 20;
+		this.cellsVertical = 15;
+		console.log('expert mode selected');
+	};
+
+	//start button
+	displayOption = () => {
+		this.options.classList.add('hidden');
+
+		this.generateMaze();
+	};
 
 	generateMaze = () => {
 		this.world.gravity.y = 0;
-
-		this.cellsHorizontal = 3;
-		this.cellsVertical = 3;
 
 		this.boundaryWallThickness = 3;
 		this.wallThickness = 3;

@@ -1,5 +1,7 @@
 const body = document.querySelector('body');
 const win = document.querySelector('.win');
+const option = document.querySelector('.options');
+
 const resetButton = document.querySelector('.restart');
 const startButton = document.querySelector('.start');
 const beginnerButton = document.querySelector('.beginner');
@@ -11,6 +13,7 @@ const expertButton = document.querySelector('.expert');
 const mazeOne = new mazeRunner(
 	body,
 	win,
+	option,
 	resetButton,
 	startButton,
 	beginnerButton,
