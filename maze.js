@@ -1,5 +1,14 @@
 class mazeRunner {
-	constructor (canvas, body, win, resetbutton) {
+	constructor (
+		body,
+		win,
+		resetbutton,
+		beginnerButton,
+		basicButton,
+		intermediateButton,
+		advancedButton,
+		expertButton
+	) {
 		//the Matter object
 		this.Engine = Matter.Engine;
 		this.Render = Matter.Render;
@@ -13,12 +22,17 @@ class mazeRunner {
 		this.world = this.engine.world;
 		//create runner
 		this.runner = this.Runner.create();
-		this.canvas = canvas;
 		this.body = body;
 		this.win = win;
 
 		//listener
 		resetbutton.addEventListener('click', this.resetMaze);
+		startButton.addEventListener('click', this.resetMaze);
+		beginnerButton.addEventListener('click', this.resetMaze);
+		basicButton.addEventListener('click', this.resetMaze);
+		intermediateButton.addEventListener('click', this.resetMaze);
+		advancedButton.addEventListener('click', this.resetMaze);
+		expertButton.addEventListener('click', this.resetMaze);
 	}
 
 	generateMaze = () => {
@@ -50,6 +64,8 @@ class mazeRunner {
 		this.Render.run(this.render);
 		//run the runner
 		this.Runner.run(this.runner, this.engine); //alias for Matter.Runner.start
+		//canvas assignment
+		this.canvas = document.querySelector('canvas');
 
 		//Matter.Bodies.rectangle(x, y, width, height)
 		//Bodies object creates the shape while Body object applys the physical properties
@@ -328,7 +344,6 @@ class mazeRunner {
 				) {
 					document.querySelector('.win').classList.remove('hidden');
 					this.world.gravity.y = 1;
-					console.log(this.render.canvas);
 					this.world.bodies.forEach((ele) => {
 						if (ele.label === 'wall') {
 							this.Body.setStatic(ele, false);
@@ -346,7 +361,7 @@ class mazeRunner {
 		this.Render.stop(this.render);
 		this.Runner.stop(this.runner);
 		this.win.classList.add('hidden');
-		document.querySelector('canvas').remove();
+		this.canvas.remove();
 		this.render.canvas = null; //garbage collect
 		this.render.context = null;
 		this.render.textures = {};
