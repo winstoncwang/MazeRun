@@ -223,3 +223,8 @@ Version 0.38
 Version 0.39
 
      button appearance update
+---
+
+Version 0.40
+
+     different game mode added and working as intended
