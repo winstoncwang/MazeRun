@@ -11,15 +11,55 @@ body {
 	height: 100vh;
 	width: 100vw;
 }
+.options {
+	z-index: 1;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+}
 h1 {
 	font-size: 50px;
 	color: yellow;
 	display: block;
 }
 .hidden {
-	display: none;
+	display: none !important;
 }
-button {
+.options button:hover {
+	border-color: rgb(80, 112, 255);
+	border-radius: 15px;
+	padding: 15px;
+}
+.options button:focus {
+	background-color: rgb(80, 112, 255);
+	border-radius: 15px;
+	padding: 15px;
+}
+.options button.start:hover {
+	border-color: rgb(73, 231, 81) !important;
+	border-radius: 50% !important;
+	height: 150px;
+	width: 150px;
+}
+.options button {
+	font-size: 40px;
+	border-radius: 15px;
+	color: white;
+	background: transparent;
+	padding: 15px;
+}
+
+.start {
+	border-radius: 50% !important;
+	height: 150px;
+	width: 150px;
+}
+button.restart {
 	font-size: 50px;
 	background-color: transparent;
 	border: none;
