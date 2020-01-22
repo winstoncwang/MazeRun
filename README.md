@@ -213,3 +213,8 @@ Version 0.36
 Version 0.37
 
      html update difficulty buttons
+---
+
+Version 0.38
+
+     add eventlistener to every button
