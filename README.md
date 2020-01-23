@@ -228,3 +228,8 @@ Version 0.39
 Version 0.40
 
      different game mode added and working as intended
+---
+
+Version 0.41
+
+     difficulty changed and button press effect corrected
