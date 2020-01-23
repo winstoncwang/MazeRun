@@ -38,28 +38,28 @@ class mazeRunner {
 	}
 	//select mode
 	beginnerMode = () => {
-		this.cellsHorizontal = 5;
+		this.cellsHorizontal = 12;
 		this.cellsVertical = 4;
 		console.log('beginner mode selected');
 	};
 	basicMode = () => {
-		this.cellsHorizontal = 7;
-		this.cellsVertical = 6;
+		this.cellsHorizontal = 15;
+		this.cellsVertical = 7;
 		console.log('basic mode selected');
 	};
 	intermediateMode = () => {
-		this.cellsHorizontal = 9;
-		this.cellsVertical = 8;
+		this.cellsHorizontal = 20;
+		this.cellsVertical = 12;
 		console.log('intermediate mode selected');
 	};
 	advancedMode = () => {
-		this.cellsHorizontal = 12;
-		this.cellsVertical = 10;
+		this.cellsHorizontal = 27;
+		this.cellsVertical = 19;
 		console.log('advanced mode selected');
 	};
 	expertMode = () => {
-		this.cellsHorizontal = 20;
-		this.cellsVertical = 15;
+		this.cellsHorizontal = 34;
+		this.cellsVertical = 26;
 		console.log('expert mode selected');
 	};
 

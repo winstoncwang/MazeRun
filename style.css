@@ -38,11 +38,20 @@ h1 {
 .options button:focus {
 	background-color: rgb(80, 112, 255);
 	border-radius: 15px;
+	color: black;
 	padding: 15px;
 }
 .options button.start:hover {
 	border-color: rgb(73, 231, 81) !important;
 	border-radius: 50% !important;
+	height: 150px;
+	width: 150px;
+}
+.options button.start:focus {
+	border-color: white !important;
+	background-color: rgb(73, 231, 81) !important;
+	border-radius: 50% !important;
+	color: black;
 	height: 150px;
 	width: 150px;
 }
