@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const win = document.querySelector('.win');
 const option = document.querySelector('.options');
+const backMenu = document.querySelector('.backmenu');
 
 const resetButton = document.querySelector('.restart');
 const startButton = document.querySelector('.start');
@@ -9,6 +10,7 @@ const basicButton = document.querySelector('.basic');
 const intermediateButton = document.querySelector('.intermediate');
 const advancedButton = document.querySelector('.advanced');
 const expertButton = document.querySelector('.expert');
+const backButton = document.querySelector('.back');
 
 const mazeOne = new mazeRunner(
 	body,
@@ -20,5 +22,7 @@ const mazeOne = new mazeRunner(
 	basicButton,
 	intermediateButton,
 	advancedButton,
-	expertButton
+	expertButton,
+	backButton,
+	backMenu
 );

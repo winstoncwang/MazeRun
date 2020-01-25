@@ -9,7 +9,9 @@ class mazeRunner {
 		basicButton,
 		intermediateButton,
 		advancedButton,
-		expertButton
+		expertButton,
+		backButton,
+		backMenu
 	) {
 		//the Matter object
 		this.Engine = Matter.Engine;
@@ -27,6 +29,7 @@ class mazeRunner {
 		this.body = body;
 		this.win = win;
 		this.options = options;
+		this.backMenu = backMenu;
 		//listener
 		resetbutton.addEventListener('click', this.resetMaze);
 		startButton.addEventListener('click', this.displayOption);
@@ -35,10 +38,11 @@ class mazeRunner {
 		intermediateButton.addEventListener('click', this.intermediateMode);
 		advancedButton.addEventListener('click', this.advancedMode);
 		expertButton.addEventListener('click', this.expertMode);
+		backButton.addEventListener('click', this.resetMaze);
 	}
 	//select mode
 	beginnerMode = () => {
-		this.cellsHorizontal = 12;
+		this.cellsHorizontal = 8;
 		this.cellsVertical = 4;
 		console.log('beginner mode selected');
 	};
@@ -70,7 +74,25 @@ class mazeRunner {
 		this.generateMaze();
 	};
 
+	//replay maze
+	resetMaze = () => {
+		this.Events.off(this.engine, 'collisionStart');
+		this.World.clear(this.world);
+		this.Engine.clear(this.engine);
+		this.Render.stop(this.render);
+		this.Runner.stop(this.runner);
+		this.win.classList.add('hidden');
+		this.canvas.remove();
+		this.render.canvas = null; //garbage collect
+		this.render.context = null;
+		this.render.textures = {};
+
+		this.options.classList.remove('hidden');
+		this.backMenu.classList.add('hidden');
+	};
+
 	generateMaze = () => {
+		this.backMenu.classList.remove('hidden');
 		this.world.gravity.y = 0;
 
 		this.boundaryWallThickness = 3;
@@ -375,6 +397,7 @@ class mazeRunner {
 					collisionObjectArr.includes(collision.bodyB.label)
 				) {
 					document.querySelector('.win').classList.remove('hidden');
+					this.backMenu.classList.add('hidden');
 					this.world.gravity.y = 1;
 					this.world.bodies.forEach((ele) => {
 						if (ele.label === 'wall') {
@@ -384,20 +407,5 @@ class mazeRunner {
 				}
 			});
 		});
-	};
-
-	resetMaze = () => {
-		this.Events.off(this.engine, 'collisionStart');
-		this.World.clear(this.world);
-		this.Engine.clear(this.engine);
-		this.Render.stop(this.render);
-		this.Runner.stop(this.runner);
-		this.win.classList.add('hidden');
-		this.canvas.remove();
-		this.render.canvas = null; //garbage collect
-		this.render.context = null;
-		this.render.textures = {};
-
-		this.generateMaze();
 	};
 }
