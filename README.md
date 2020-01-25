@@ -233,3 +233,8 @@ Version 0.40
 Version 0.41
 
      difficulty changed and button press effect corrected
+---
+
+Version 0.42
+
+     back button logic added
