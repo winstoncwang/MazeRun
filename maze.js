@@ -44,26 +44,31 @@ class mazeRunner {
 	beginnerMode = () => {
 		this.cellsHorizontal = 8;
 		this.cellsVertical = 4;
+		this.velocitySensitivity = 4;
 		console.log('beginner mode selected');
 	};
 	basicMode = () => {
 		this.cellsHorizontal = 15;
 		this.cellsVertical = 7;
+		this.velocitySensitivity = 3.5;
 		console.log('basic mode selected');
 	};
 	intermediateMode = () => {
 		this.cellsHorizontal = 20;
 		this.cellsVertical = 12;
+		this.velocitySensitivity = 2.5;
 		console.log('intermediate mode selected');
 	};
 	advancedMode = () => {
-		this.cellsHorizontal = 27;
+		this.cellsHorizontal = 30;
 		this.cellsVertical = 19;
+		this.velocitySensitivity = 2;
 		console.log('advanced mode selected');
 	};
 	expertMode = () => {
-		this.cellsHorizontal = 34;
+		this.cellsHorizontal = 46;
 		this.cellsVertical = 26;
+		this.velocitySensitivity = 1;
 		console.log('expert mode selected');
 	};
 
@@ -363,25 +368,37 @@ class mazeRunner {
 			//move up
 			if (event.keyCode === 38 || event.keyCode === 87) {
 				if (checkVelocity(x, y)) {
-					this.Body.setVelocity(this.ball, { x, y: y - 4 });
+					this.Body.setVelocity(this.ball, {
+						x,
+						y : y - this.velocitySensitivity
+					});
 				}
 			}
 			//move down
 			if (event.keyCode === 40 || event.keyCode === 83) {
 				if (checkVelocity(x, y)) {
-					this.Body.setVelocity(this.ball, { x, y: y + 4 });
+					this.Body.setVelocity(this.ball, {
+						x,
+						y : y + this.velocitySensitivity
+					});
 				}
 			}
 			//move left
 			if (event.keyCode === 37 || event.keyCode === 65) {
 				if (checkVelocity(x, y)) {
-					this.Body.setVelocity(this.ball, { x: x - 4, y });
+					this.Body.setVelocity(this.ball, {
+						x : x - this.velocitySensitivity,
+						y
+					});
 				}
 			}
 			//move right
 			if (event.keyCode === 39 || event.keyCode === 68) {
 				if (checkVelocity(x, y)) {
-					this.Body.setVelocity(this.ball, { x: x + 4, y });
+					this.Body.setVelocity(this.ball, {
+						x : x + this.velocitySensitivity,
+						y
+					});
 				}
 			}
 		});
