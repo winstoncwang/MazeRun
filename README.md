@@ -238,3 +238,8 @@ Version 0.41
 Version 0.42
 
      back button logic added
+---
+
+Version 0.43
+
+     velocitySensitivity according to game mode
