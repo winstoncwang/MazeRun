@@ -243,3 +243,8 @@ Version 0.42
 Version 0.43
 
      velocitySensitivity according to game mode
+---
+
+Version 0.44
+
+     topVelocity added to cap velocity under different game mode
