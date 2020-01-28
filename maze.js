@@ -45,30 +45,35 @@ class mazeRunner {
 		this.cellsHorizontal = 8;
 		this.cellsVertical = 4;
 		this.velocitySensitivity = 4;
+		this.topVelocity = 20;
 		console.log('beginner mode selected');
 	};
 	basicMode = () => {
 		this.cellsHorizontal = 15;
 		this.cellsVertical = 7;
 		this.velocitySensitivity = 3.5;
+		this.topVelocity = 20;
 		console.log('basic mode selected');
 	};
 	intermediateMode = () => {
 		this.cellsHorizontal = 20;
 		this.cellsVertical = 12;
 		this.velocitySensitivity = 2.5;
+		this.topVelocity = 20;
 		console.log('intermediate mode selected');
 	};
 	advancedMode = () => {
 		this.cellsHorizontal = 30;
 		this.cellsVertical = 19;
 		this.velocitySensitivity = 2;
+		this.topVelocity = 20;
 		console.log('advanced mode selected');
 	};
 	expertMode = () => {
 		this.cellsHorizontal = 46;
 		this.cellsVertical = 26;
-		this.velocitySensitivity = 1;
+		this.velocitySensitivity = 2;
+		this.topVelocity = 15;
 		console.log('expert mode selected');
 	};
 
@@ -355,7 +360,12 @@ class mazeRunner {
 		//Function that checks velocity
 		const checkVelocity = (velX, velY) => {
 			//console.log(velX, velY); //check speed does not exceed +/-20
-			if (velX > 20 || velX < -20 || velY > 20 || velY < -20) {
+			if (
+				velX > this.topVelocity ||
+				velX < -this.topVelocity ||
+				velY > this.topVelocity ||
+				velY < -this.topVelocity
+			) {
 				return false;
 			}
 			return true;
